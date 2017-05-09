@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <script src="jquery.js" type="text/javascript"></script>
+    <script src="echarts3.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+
+<script type="application/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '对数轴示例',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c}'
+        },
+        legend: {
+            left: 'left',
+            data: ['2的指数', '3的指数']
+        },
+        xAxis: {
+            type: 'category',
+            name: 'x',
+            splitLine: {show: false},
+            data: ['一', '二', '三', '四', '五', '六', '七', '八', '九']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        yAxis: {
+            type: 'log',
+            name: 'y'
+        },
+        series: [
+            {
+                name: '3的指数',
+                type: 'line',
+                data: [1222],
+                itemStyle: {
+                    normal: {
+                        color: '#02a505',
+                        borderWidth:15
+                    }
+                }
+            },
+            {
+                name: '2的指数',
+                type: 'line',
+                data: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+            },
+            {
+                name: '1/2的指数',
+                type: 'line',
+                data: [1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, 1/256, 1/512]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+
+
+</script>
+</body>
+</html>
